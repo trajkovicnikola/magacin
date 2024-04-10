@@ -12,7 +12,8 @@ public class Artikal {
 	}
 
 	public void setNaziv(String naziv) {
-		this.naziv = naziv;
+		if (naziv != null && !naziv.isEmpty())
+			this.naziv = naziv;
 	}
 
 	public Long getSifra() {
@@ -20,7 +21,8 @@ public class Artikal {
 	}
 
 	public void setSifra(Long sifra) {
-		this.sifra = sifra;
+		if (sifra != null)
+			this.sifra = sifra;
 	}
 
 	public String getOpis() {
@@ -28,7 +30,8 @@ public class Artikal {
 	}
 
 	public void setOpis(String opis) {
-		this.opis = opis;
+		if (opis != null && !opis.isEmpty())
+			this.opis = opis;
 	}
 
 	public int getKolicina() {
@@ -36,7 +39,8 @@ public class Artikal {
 	}
 
 	public void setKolicina(int kolicina) {
-		this.kolicina = kolicina;
+		if (kolicina > 0)
+			this.kolicina = kolicina;
 	}
 
 }
