@@ -5,12 +5,13 @@ import java.util.List;
 import magacin.interfejs.MagacinInterfejs;
 
 public class Magacin implements MagacinInterfejs {
-	
+
 	private List<Artikal> artikli;
 
 	@Override
 	public void dodajArtikal(Artikal a) {
-		artikli.add(a);
+		if (!artikli.contains(a))
+			artikli.add(a);
 
 	}
 
@@ -22,8 +23,8 @@ public class Magacin implements MagacinInterfejs {
 
 	@Override
 	public Artikal pretraziArtikal(String naziv) {
-		for(Artikal a:artikli)
-			if(a.getNaziv().equals(naziv))
+		for (Artikal a : artikli)
+			if (a.getNaziv().equals(naziv))
 				return a;
 		return null;
 	}
