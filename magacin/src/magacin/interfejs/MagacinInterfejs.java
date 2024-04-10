@@ -8,6 +8,6 @@ public interface MagacinInterfejs {
 	
 	public void izbaciArtikal(Artikal a);
 	
-	public void pretraziArtikal(String naziv);
+	public Artikal pretraziArtikal(String naziv);
 
 }

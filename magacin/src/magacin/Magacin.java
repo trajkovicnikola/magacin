@@ -1,25 +1,31 @@
 package magacin;
 
+import java.util.List;
+
 import magacin.interfejs.MagacinInterfejs;
 
 public class Magacin implements MagacinInterfejs {
+	
+	private List<Artikal> artikli;
 
 	@Override
 	public void dodajArtikal(Artikal a) {
-		// TODO Auto-generated method stub
+		artikli.add(a);
 
 	}
 
 	@Override
 	public void izbaciArtikal(Artikal a) {
-		// TODO Auto-generated method stub
+		artikli.remove(a);
 
 	}
 
 	@Override
-	public void pretraziArtikal(String naziv) {
-		// TODO Auto-generated method stub
-
+	public Artikal pretraziArtikal(String naziv) {
+		for(Artikal a:artikli)
+			if(a.getNaziv().equals(naziv))
+				return a;
+		return null;
 	}
 
 }
